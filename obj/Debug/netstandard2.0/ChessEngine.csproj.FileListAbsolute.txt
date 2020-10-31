@@ -1,0 +1,9 @@
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.csprojAssemblyReference.cache
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.AssemblyInfoInputs.cache
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.AssemblyInfo.cs
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.csproj.CoreCompileInputs.cache
+/home/ivan/Documents/projects/CSharp/chess-engine-library/bin/Debug/netstandard2.0/ChessEngine.deps.json
+/home/ivan/Documents/projects/CSharp/chess-engine-library/bin/Debug/netstandard2.0/ChessEngine.dll
+/home/ivan/Documents/projects/CSharp/chess-engine-library/bin/Debug/netstandard2.0/ChessEngine.pdb
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.dll
+/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/Debug/netstandard2.0/ChessEngine.pdb

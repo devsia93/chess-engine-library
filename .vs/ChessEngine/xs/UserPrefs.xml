@@ -1,22 +1,21 @@
 ﻿<Properties StartupConfiguration="{917F30E9-683B-4D97-B26A-E1D7C44CBDDE}|Default">
   <MonoDevelop.Ide.ItemProperties.test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Moves.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chess.cs">
     <Files>
-      <File FileName="Controllers/BoardController.cs" Line="1" Column="1" />
-      <File FileName="Chess.cs" Line="49" Column="42" />
+      <File FileName="Controllers/BoardController.cs" Line="59" Column="1" />
+      <File FileName="Chess.cs" Line="35" Column="7" />
       <File FileName="Objects/Color.cs" Line="1" Column="1" />
       <File FileName="Objects/Cell.cs" Line="1" Column="1" />
       <File FileName="Controllers/MoveController.cs" Line="1" Column="1" />
-      <File FileName="../../../../Projects/test/test/Program.cs" Line="10" Column="10" />
-      <File FileName="Moves.cs" Line="1" Column="1" />
+      <File FileName="../../../../Projects/test/test/Program.cs" Line="34" Column="48" />
+      <File FileName="Moves.cs" Line="194" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ChessEngine" expanded="True">
+          <Node name="ChessEngine" expanded="True" selected="True">
             <Node name="ChessEngine" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Moves.cs" selected="True" />
             </Node>
             <Node name="test" expanded="True" />
           </Node>

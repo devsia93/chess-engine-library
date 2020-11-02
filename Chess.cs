@@ -34,13 +34,22 @@ namespace ChessEngine
             UpdateCheckFlags();
         }
 
-        public Chess Move(string move)
+        public bool isValidMove(string move)
         {
             MoveController moveController = new MoveController(move);
             if (!moves.CanMove(moveController))
-                return this;
+                return false;
             if (boardController.isCheckAfter(moveController))
+                return false;
+            return true;
+        
+        }
+
+        public Chess Move(string move)
+        {
+            if (!isValidMove(move))
                 return this;
+            MoveController moveController = new MoveController(move);
             BoardController newBC = boardController.Move(moveController);
             Chess newChessEngine = new Chess(newBC);
             return newChessEngine;

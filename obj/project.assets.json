@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ivan/Documents/projects/CSharp/chess-engine-library/ChessEngine.csproj",
+      "projectUniqueName": "/home/ivan/Documents/projects/csharp/chess-engine-library/ChessEngine.csproj",
       "projectName": "ChessEngine",
-      "projectPath": "/home/ivan/Documents/projects/CSharp/chess-engine-library/ChessEngine.csproj",
+      "projectPath": "/home/ivan/Documents/projects/csharp/chess-engine-library/ChessEngine.csproj",
       "packagesPath": "/home/ivan/.nuget/packages/",
-      "outputPath": "/home/ivan/Documents/projects/CSharp/chess-engine-library/obj/",
+      "outputPath": "/home/ivan/Documents/projects/csharp/chess-engine-library/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ivan/.config/NuGet/NuGet.Config"

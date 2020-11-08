@@ -5,6 +5,8 @@ namespace ChessEngine
 {
     public class Chess
     {
+        public static int Enpassant { get; set; }
+
         BoardController boardController;
         Moves moves;
 
@@ -25,6 +27,7 @@ namespace ChessEngine
             boardController = new BoardController(fen);
             moves = new Moves(boardController);
             UpdateCheckFlags();
+            Enpassant = 0;
         }
 
         Chess(BoardController boardController)

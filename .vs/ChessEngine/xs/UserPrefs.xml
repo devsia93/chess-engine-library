@@ -1,29 +1,38 @@
 ﻿<Properties StartupConfiguration="{917F30E9-683B-4D97-B26A-E1D7C44CBDDE}|Default">
   <MonoDevelop.Ide.ItemProperties.test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Chess.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Objects/Figure.cs">
     <Files>
-      <File FileName="Controllers/BoardController.cs" Line="59" Column="1" />
-      <File FileName="Chess.cs" Line="35" Column="7" />
+      <File FileName="Controllers/BoardController.cs" Line="216" Column="14" />
+      <File FileName="Chess.cs" Line="30" Column="27" />
       <File FileName="Objects/Color.cs" Line="1" Column="1" />
-      <File FileName="Objects/Cell.cs" Line="1" Column="1" />
+      <File FileName="Objects/Cell.cs" Line="37" Column="78" />
       <File FileName="Controllers/MoveController.cs" Line="1" Column="1" />
-      <File FileName="../../../../Projects/test/test/Program.cs" Line="34" Column="48" />
-      <File FileName="Moves.cs" Line="194" Column="10" />
+      <File FileName="../../../../Projects/test/test/Program.cs" Line="14" Column="20" />
+      <File FileName="Moves.cs" Line="152" Column="41" />
+      <File FileName="Objects/Figure.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ChessEngine" expanded="True" selected="True">
+          <Node name="ChessEngine" expanded="True">
             <Node name="ChessEngine" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Objects" expanded="True">
+                <Node name="Figure.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="test" expanded="True" />
+            <Node name="test" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../Moves.cs" line="191" offsetX="647" offsetY="3420" expression="moveController.DifferenceY" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

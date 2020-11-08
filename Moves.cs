@@ -147,7 +147,10 @@ namespace ChessEngine
                     if (moveController.DifferenceY == stepY && moveController.AbsDifferenceX == 1)
                         if (stepY == 1 && moveController.CurrentCell.y == Constants.HORIZONTAL_FOR_BLACK_PAWN - Constants.MAX_DIF_PAWN_Y ||
                         stepY == -1 && moveController.CurrentCell.y == Constants.HORIZONTAL_FOR_WHITE_PAWN + Constants.MAX_DIF_PAWN_Y)
+                        {
+                            Chess.Enpassant++;
                             return true;
+                        }
             return false;
         }
 
@@ -164,7 +167,7 @@ namespace ChessEngine
                         moveController.CurrentCell.y == Constants.HORIZONTAL_FOR_BLACK_PAWN &&
                         stepY == -1)
                             if (boardController.GetFigureAtCell(new Cell(moveController.NewCell.x,
-                                moveController.NewCell.y + stepY)) == Figure.none)//none figure at cells for abs(diff.y) == 2 
+                                moveController.NewCell.y)) == Figure.none)//none figure at cells for abs(diff.y) == 2 
                                 return true;
             }
             return false;

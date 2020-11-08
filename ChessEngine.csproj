@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="test\Program.cs" />
+    <Compile Remove="test\Properties\AssemblyInfo.cs" />
+    <Compile Remove="test\obj\x86\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="test\obj\x86\Debug\test.csprojAssemblyReference.cache" />
+    <None Remove="test\bin\Debug\ChessEngine.dll" />
+    <None Remove="test\obj\x86\Debug\test.csproj.CoreCompileInputs.cache" />
+    <None Remove="test\obj\x86\Debug\test.exe" />
+    <None Remove="test\obj\x86\Debug\test.pdb" />
+    <None Remove="test\bin\Debug\System.ValueTuple.dll" />
+    <None Remove="test\bin\Debug\System.Security.Cryptography.Algorithms.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Remove="test\bin\Debug\System.Resources.Writer.dll" />
+    <None Remove="test\bin\Debug\System.Resources.ResourceManager.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.CompilerServices.VisualC.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Extensions.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Serialization.Formatters.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Serialization.Json.dll" />
+    <None Remove="test\bin\Debug\System.Security.Claims.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.InteropServices.dll" />
+    <None Remove="test\bin\Debug\System.Security.SecureString.dll" />
+    <None Remove="test\bin\Debug\System.Text.Encoding.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Serialization.Primitives.dll" />
+    <None Remove="test\bin\Debug\System.Security.Cryptography.Primitives.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Handles.dll" />
+    <None Remove="test\bin\Debug\System.Security.Cryptography.Csp.dll" />
+    <None Remove="test\bin\Debug\System.Text.RegularExpressions.dll" />
+    <None Remove="test\bin\Debug\System.Text.Encoding.Extensions.dll" />
+    <None Remove="test\bin\Debug\System.Security.Cryptography.Encoding.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Serialization.Xml.dll" />
+    <None Remove="test\bin\Debug\System.Runtime.Numerics.dll" />
+    <None Remove="test\bin\Debug\System.Security.Principal.dll" />
+    <None Remove="test\bin\Debug\System.Threading.Overlapped.dll" />
+    <None Remove="test\bin\Debug\System.Xml.XPath.dll" />
+    <None Remove="test\bin\Debug\System.Threading.Thread.dll" />
+    <None Remove="test\bin\Debug\System.Xml.XmlDocument.dll" />
+    <None Remove="test\bin\Debug\System.Threading.Tasks.Parallel.dll" />
+    <None Remove="test\bin\Debug\System.Xml.ReaderWriter.dll" />
+    <None Remove="test\bin\Debug\System.Xml.XDocument.dll" />
+    <None Remove="test\bin\Debug\System.Xml.XPath.XDocument.dll" />
+    <None Remove="test\obj\x86\Debug\test.csproj.FileListAbsolute.txt" />
+    <None Remove="test\bin\Debug\System.Threading.Tasks.dll" />
+    <None Remove="test\bin\Debug\System.Threading.Timer.dll" />
+    <None Remove="test\bin\Debug\test.exe" />
+    <None Remove="test\bin\Debug\System.Security.Cryptography.X509Certificates.dll" />
+    <None Remove="test\bin\Debug\System.Xml.XmlSerializer.dll" />
+    <None Remove="test\obj\x86\Debug\test.csproj.CopyComplete" />
+    <None Remove="test\bin\Debug\System.Threading.dll" />
+    <None Remove="test\bin\Debug\System.Threading.ThreadPool.dll" />
+    <None Remove="test\bin\Debug\test.pdb" />
+  </ItemGroup>
+</Project>

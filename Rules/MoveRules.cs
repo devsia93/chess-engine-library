@@ -4,7 +4,7 @@ namespace ChessEngine
 {
      class MoveRules
     {
-        MoveController moveController;
+        Move moveController;
         BoardController boardController;
 
         public MoveRules(BoardController boardController)
@@ -12,7 +12,7 @@ namespace ChessEngine
             this.boardController = boardController;
         }
 
-        public bool CanMove(MoveController mc)
+        public bool CanMove(Move mc)
         {
             this.moveController = mc;
             return CanMoveCurrent() && CanMoveNew() && CanFigureMove();
@@ -63,7 +63,7 @@ namespace ChessEngine
                     new Cell(Constants.COUNT_SQUARES-1, 0)) == Figure.whiteRook)
                         if (checkCellsForEmpty(whiteKingStartPosition, whiteCastlingPositionToRight))
                             if (!boardController.isCheck())
-                            if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
+                            if (!boardController.isCheckAfter(new Move(new FigureOnCell(
                             Figure.whiteKing, whiteKingStartPosition), new Cell(whiteKingStartPosition.x+1, 0))))
                                 return true;
 
@@ -74,7 +74,7 @@ namespace ChessEngine
                         if (checkCellsForEmpty(whiteKingStartPosition, whiteCastlingPositionToLeft))
                         if (boardController.GetFigureAtCell(new Cell(1, 0)) == Figure.none)
                         if (!boardController.isCheck())
-                            if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
+                            if (!boardController.isCheckAfter(new Move(new FigureOnCell(
                             Figure.whiteKing, whiteKingStartPosition), new Cell(whiteKingStartPosition.x - 1, 0))))
                             return true;
             }
@@ -92,7 +92,7 @@ namespace ChessEngine
                     new Cell(Constants.COUNT_SQUARES - 1, Constants.COUNT_SQUARES - 1)) == Figure.blackRook)
                         if (checkCellsForEmpty(blackKingStartPosition, blackCastlingPositionToRight))
                             if (!boardController.isCheck())
-                            if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
+                            if (!boardController.isCheckAfter(new Move(new FigureOnCell(
                             Figure.blackKing, blackKingStartPosition), new Cell(blackKingStartPosition.x + 1, Constants.COUNT_SQUARES-1))))
                             return true;
 
@@ -103,7 +103,7 @@ namespace ChessEngine
                         if (checkCellsForEmpty(blackKingStartPosition, blackCastlingPositionToLeft))
                         if (boardController.GetFigureAtCell(new Cell(1, Constants.COUNT_SQUARES - 1)) == Figure.none)
                         if (!boardController.isCheck())
-                            if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
+                            if (!boardController.isCheckAfter(new Move(new FigureOnCell(
                             Figure.blackKing, blackKingStartPosition), new Cell(blackKingStartPosition.x - 1, Constants.COUNT_SQUARES - 1))))
                             return true;
             }

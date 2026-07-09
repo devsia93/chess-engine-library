@@ -5,7 +5,7 @@ namespace ChessEngine
 {
     internal static class CheckDetector
     {
-        public static bool IsCheckAfter(BoardController state, MoveController move)
+        public static bool IsCheckAfter(BoardController state, Move move)
         {
             BoardController after = state.Move(move);
             return CanEatKing(after);
@@ -13,7 +13,7 @@ namespace ChessEngine
 
         public static bool IsCheck(BoardController state)
         {
-            return IsCheckAfter(state, MoveController.none);
+            return IsCheckAfter(state, Move.none);
         }
 
         private static bool CanEatKing(BoardController state)
@@ -21,7 +21,7 @@ namespace ChessEngine
             Cell enemyKing = FindEnemyKing(state);
             MoveRules moves = new MoveRules(state);
             foreach (FigureOnCell fc in state.YieldFiguresOnCell())
-                if (moves.CanMove(new MoveController(fc, enemyKing)))
+                if (moves.CanMove(new Move(fc, enemyKing)))
                     return true;
             return false;
         }

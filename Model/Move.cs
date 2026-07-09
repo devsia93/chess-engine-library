@@ -1,9 +1,9 @@
 ﻿using System;
 namespace ChessEngine
 {
-     class MoveController
+     class Move
     {
-        public static MoveController none = new MoveController();
+        public static Move none = new Move();
 
         public Figure CurrentFigure { get; private set; }
         public Cell CurrentCell { get; private set; }
@@ -18,7 +18,7 @@ namespace ChessEngine
         public int SignX { get { return Math.Sign(DifferenceX); } }
         public int SignY { get { return Math.Sign(DifferenceY); } }
 
-        private MoveController()
+        private Move()
         {
             CurrentFigure = Figure.none;
             CurrentCell = Cell.none;
@@ -26,7 +26,7 @@ namespace ChessEngine
             Transformation = Figure.none;
         }
 
-        public MoveController(FigureOnCell figureOnCell, Cell newCell, Figure transformation = Figure.none)
+        public Move(FigureOnCell figureOnCell, Cell newCell, Figure transformation = Figure.none)
         {
             this.CurrentFigure = figureOnCell.figure;
             this.CurrentCell = figureOnCell.CurrentCell;
@@ -34,7 +34,7 @@ namespace ChessEngine
             this.Transformation = transformation;
         }
 
-        public MoveController(string move)//example for move values: Pe2e4, Ph7h8Q
+        public Move(string move)//example for move values: Pe2e4, Ph7h8Q
         {
             this.CurrentFigure = (Figure)move[0];
             this.CurrentCell = new Cell(move.Substring(1, 2));

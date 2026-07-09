@@ -39,7 +39,7 @@ namespace ChessEngine
 
         public bool isValidMove(string move)
         {
-            MoveController moveController = new MoveController(move);
+            Move moveController = new Move(move);
             if (!moves.CanMove(moveController))
                 return false;
             if (boardController.isCheckAfter(moveController))
@@ -52,7 +52,7 @@ namespace ChessEngine
         {
             if (!isValidMove(move))
                 return this;
-            MoveController moveController = new MoveController(move);
+            Move moveController = new Move(move);
             BoardController newBC = boardController.Move(moveController);
             Chess newChessEngine = new Chess(newBC);
             return newChessEngine;
@@ -90,7 +90,7 @@ namespace ChessEngine
                 foreach (Cell cell in Cell.YieldBoardCells())
                     foreach(Figure transformation in fc.figure.YieldTransformations(cell))
                     {
-                        MoveController mc = new MoveController(fc, cell, transformation);
+                        Move mc = new Move(fc, cell, transformation);
                         if (moves.CanMove(mc))
                             if (!boardController.isCheckAfter(mc))
                             yield return mc.ToString();

@@ -33,7 +33,7 @@ namespace ChessEngine
             MoveNumber = parsed.moveNumber;
         }
 
-        public BoardController Move(MoveController moveController)
+        public BoardController Move(Move moveController)
         {
             return new MovedBoard(Fen, moveController);
         }
@@ -53,7 +53,7 @@ namespace ChessEngine
             board.SetFigureAtCell(cell, figure);
         }
 
-        public bool isCheckAfter(MoveController mc)
+        public bool isCheckAfter(Move mc)
         {
             return CheckDetector.IsCheckAfter(this, mc);
         }
@@ -66,9 +66,9 @@ namespace ChessEngine
 
     class MovedBoard : BoardController
     {
-        MoveController mc;
+        Move mc;
 
-        public MovedBoard(string fen, MoveController mc) : base(fen)
+        public MovedBoard(string fen, Move mc) : base(fen)
         {
             this.mc = mc;
             bool isCapture = IsCapture();

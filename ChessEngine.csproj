@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="ChessEngine.Tests/**" />
     <Compile Remove="test\Program.cs" />
     <Compile Remove="test\Properties\AssemblyInfo.cs" />
     <Compile Remove="test\obj\x86\Debug\.NETFramework,Version=v4.7.AssemblyAttributes.cs" />

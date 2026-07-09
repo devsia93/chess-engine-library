@@ -72,6 +72,7 @@ namespace ChessEngine
                     if (boardController.CanCastlingA1 && boardController.GetFigureAtCell(
                     new Cell(0, 0)) == Figure.whiteRook)
                         if (checkCellsForEmpty(whiteKingStartPosition, whiteCastlingPositionToLeft))
+                        if (boardController.GetFigureAtCell(new Cell(1, 0)) == Figure.none)
                         if (!boardController.isCheck())
                             if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
                             Figure.whiteKing, whiteKingStartPosition), new Cell(whiteKingStartPosition.x - 1, 0))))
@@ -100,7 +101,8 @@ namespace ChessEngine
                     if (boardController.CanCastlingA8 && boardController.GetFigureAtCell(
                     new Cell(0, Constants.COUNT_SQUARES - 1)) == Figure.blackRook)
                         if (checkCellsForEmpty(blackKingStartPosition, blackCastlingPositionToLeft))
-                            if (!boardController.isCheck())
+                        if (boardController.GetFigureAtCell(new Cell(1, Constants.COUNT_SQUARES - 1)) == Figure.none)
+                        if (!boardController.isCheck())
                             if (!boardController.isCheckAfter(new MoveController(new FigureOnCell(
                             Figure.blackKing, blackKingStartPosition), new Cell(blackKingStartPosition.x - 1, Constants.COUNT_SQUARES - 1))))
                             return true;
@@ -166,8 +168,8 @@ namespace ChessEngine
                         stepY == 1 ||
                         moveController.CurrentCell.y == Constants.HORIZONTAL_FOR_BLACK_PAWN &&
                         stepY == -1)
-                            if (boardController.GetFigureAtCell(new Cell(moveController.NewCell.x,
-                                moveController.NewCell.y)) == Figure.none)//none figure at cells for abs(diff.y) == 2 
+                            if (boardController.GetFigureAtCell(new Cell(moveController.CurrentCell.x,
+                                moveController.CurrentCell.y + stepY)) == Figure.none)//intermediate square must be empty for double push
                                 return true;
             }
             return false;

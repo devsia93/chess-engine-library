@@ -47,10 +47,28 @@ namespace ChessEngine.Tests
 
             var after = chess.Move("Pe2e4");
 
-            // FIXME(behavior): only the placement + side-to-move prefix is asserted.
-            // The trailing en-passant target and halfmove/fullmove counters may deviate
-            // from the canonical "e3 0 1", so the full tail is intentionally not asserted.
-            after.Fen.Should().StartWith("rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b");
+            after.Fen.Should().Be("rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1");
+        }
+
+        [Fact]
+        public void Move_e2e4_e7e5_from_startpos_yields_correct_counters()
+        {
+            var chess = new Chess(StartFen);
+
+            var after = chess.Move("Pe2e4").Move("pe7e5");
+
+            after.Fen.Should().Be("rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2");
+        }
+
+        [Fact]
+        public void Move_knight_from_kiwipete_increments_halfmove_and_keeps_fullmove()
+        {
+            const string kiwipete = "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1";
+            var chess = new Chess(kiwipete);
+
+            var after = chess.Move("Nc3b1");
+
+            after.Fen.Should().Be("r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/5Q1p/PPPBBPPP/RN2K2R b KQkq - 1 1");
         }
     }
 }

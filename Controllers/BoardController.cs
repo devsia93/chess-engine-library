@@ -140,14 +140,36 @@ namespace ChessEngine
         public Board(string fen, MoveController mc) : base(fen)
         {
             this.mc = mc;
+            bool isCapture = IsCapture();
             DropEnpassant();
             SetEnpassant();
             MoveFigures();
             ChangeCurrentMoveColor();
             MoveCastlingRook();
             UpdateCastlingFlags();
+            ChangeDrawNumber(isCapture);
             ChangeMoveNumber();
             CreateNewFen();
+        }
+
+        private bool IsCapture()
+        {
+            if (GetFigureAtCell(mc.NewCell) != Figure.none)
+                return true;
+            if (mc.NewCell == Enpassant &&
+                (mc.CurrentFigure == Figure.whitePawn || mc.CurrentFigure == Figure.blackPawn))
+                return true;
+            return false;
+        }
+
+        private void ChangeDrawNumber(bool isCapture)
+        {
+            bool isPawnMove = mc.CurrentFigure == Figure.whitePawn ||
+                              mc.CurrentFigure == Figure.blackPawn;
+            if (isPawnMove || isCapture)
+                DrawNumber = 0;
+            else
+                DrawNumber++;
         }
 
         private void MoveCastlingRook()
@@ -221,7 +243,7 @@ namespace ChessEngine
 
         private void ChangeMoveNumber()
         {
-            if (CurrentMoveColor == Color.Black)
+            if (CurrentMoveColor == Color.White)
                 MoveNumber++;
         }
 

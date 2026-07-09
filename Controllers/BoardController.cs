@@ -247,8 +247,8 @@ namespace ChessEngine
                     CanCastlingH8 = false;
                     return;
                 case Figure.blackRook:
-                    CanCastlingA1 &= mc.CurrentCell != new Cell(0, Constants.COUNT_SQUARES - 1);
-                    CanCastlingH1 &= mc.CurrentCell != new Cell(Constants.COUNT_SQUARES - 1, Constants.COUNT_SQUARES - 1);
+                    CanCastlingA8 &= mc.CurrentCell != new Cell(0, Constants.COUNT_SQUARES - 1);
+                    CanCastlingH8 &= mc.CurrentCell != new Cell(Constants.COUNT_SQUARES - 1, Constants.COUNT_SQUARES - 1);
                     return;
                 default: return;
             }

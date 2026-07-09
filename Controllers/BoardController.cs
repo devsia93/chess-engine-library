@@ -55,35 +55,12 @@ namespace ChessEngine
 
         public bool isCheckAfter(MoveController mc)
         {
-            BoardController after = Move(mc);
-            return after.CanEatKing();
-        }
-
-        private bool CanEatKing()
-        {
-            Cell enemyKing = FindEnemyKing();
-            Moves moves = new Moves(this);
-            foreach (FigureOnCell fc in YieldFiguresOnCell())
-                if (moves.CanMove(new MoveController(fc, enemyKing)))
-                    return true;
-            return false;
-        }
-
-        private Cell FindEnemyKing()
-        {
-            Figure enemyKing = CurrentMoveColor == Color.White ? 
-            Figure.blackKing : Figure.whiteKing;
-            foreach (Cell cell in Cell.YieldBoardCells())
-            {
-                if (GetFigureAtCell(cell) == enemyKing)
-                    return cell;
-            }
-            return Cell.none;
+            return CheckDetector.IsCheckAfter(this, mc);
         }
 
         public bool isCheck()
         {
-            return isCheckAfter(MoveController.none);
+            return CheckDetector.IsCheck(this);
         }
     }
 

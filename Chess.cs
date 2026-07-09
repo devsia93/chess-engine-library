@@ -8,7 +8,7 @@ namespace ChessEngine
         public static int Enpassant { get; set; }
 
         BoardController boardController;
-        Moves moves;
+        MoveRules moves;
 
         public bool IsCheck { get; private set; }
         public bool IsCheckMate { get; private set; }
@@ -25,7 +25,7 @@ namespace ChessEngine
         public Chess(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
         {
             boardController = new BoardController(fen);
-            moves = new Moves(boardController);
+            moves = new MoveRules(boardController);
             UpdateCheckFlags();
             Enpassant = 0;
         }
@@ -33,7 +33,7 @@ namespace ChessEngine
         Chess(BoardController boardController)
         {
             this.boardController = boardController;
-            this.moves = new Moves(boardController);
+            this.moves = new MoveRules(boardController);
             UpdateCheckFlags();
         }
 

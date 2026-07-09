@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 
 namespace ChessEngine
 {
-     class Moves
+     class MoveRules
     {
         MoveController moveController;
         BoardController boardController;
 
-        public Moves(BoardController boardController)
+        public MoveRules(BoardController boardController)
         {
             this.boardController = boardController;
         }

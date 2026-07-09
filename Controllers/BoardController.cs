@@ -5,7 +5,7 @@ namespace ChessEngine
 {
     class BoardController
     {
-        protected Figure[,] figures;
+        protected Board board;
 
         public string Fen { get; protected set; }
         public Color CurrentMoveColor { get; protected set; }
@@ -22,7 +22,7 @@ namespace ChessEngine
             this.Fen = fen;
 
             FenParser.FenParseResult parsed = FenParser.Parse(fen);
-            figures = parsed.figures;
+            board = new Board(parsed);
             CurrentMoveColor = parsed.currentMoveColor;
             CanCastlingA1 = parsed.canCastlingA1;
             CanCastlingH1 = parsed.canCastlingH1;
@@ -35,23 +35,22 @@ namespace ChessEngine
 
         public BoardController Move(MoveController moveController)
         {
-            return new Board(Fen, moveController);
+            return new MovedBoard(Fen, moveController);
         }
 
         public IEnumerable<FigureOnCell> YieldFiguresOnCell()
         {
-            foreach (Cell cell in Cell.YieldBoardCells())
-            {
-                if (GetFigureAtCell(cell).GetColor() == CurrentMoveColor)
-                    yield return new FigureOnCell(GetFigureAtCell(cell), cell);
-            }
+            return board.YieldFiguresOnCell(CurrentMoveColor);
         }
 
         public Figure GetFigureAtCell(Cell cell)
         {
-            if (cell.CheckOnBoard())
-                return figures[cell.x, cell.y];
-            return Figure.none;
+            return board.GetFigureAtCell(cell);
+        }
+
+        protected void SetFigureAtCell(Cell cell, Figure figure)
+        {
+            board.SetFigureAtCell(cell, figure);
         }
 
         public bool isCheckAfter(MoveController mc)
@@ -88,11 +87,11 @@ namespace ChessEngine
         }
     }
 
-    class Board : BoardController
+    class MovedBoard : BoardController
     {
         MoveController mc;
 
-        public Board(string fen, MoveController mc) : base(fen)
+        public MovedBoard(string fen, MoveController mc) : base(fen)
         {
             this.mc = mc;
             bool isCapture = IsCapture();
@@ -237,16 +236,10 @@ namespace ChessEngine
             SetFigureAtCell(mc.NewCell, mc.TransformatedFigure);
         }
 
-        private void SetFigureAtCell(Cell cell, Figure figure)
-        {
-            if (cell.CheckOnBoard())
-                figures[cell.x, cell.y] = figure;
-        }
-
         private void CreateNewFen()
         {
             this.Fen = FenSerializer.Serialize(
-                figures,
+                board.figures,
                 CurrentMoveColor,
                 CanCastlingA1,
                 CanCastlingH1,
